@@ -1,0 +1,33 @@
+/* ==============
+   Style de base
+   ============== */
+
+html {
+    color: #222;
+    background-color: #eee;
+}
+body {
+  display: flex; /* or inline-flex */
+  margin: 0;
+
+}
+.ecran {
+  background-color: #fff;
+  border: 1px solid red;
+  flex: 1 0;
+  height: 100vh;
+  position: relative;
+}
+.ecran2 {
+  border-color: blue;
+
+
+}
+.plus {
+	font-size: 15vmin;
+	top: 0vh;
+	left: calc(50% - 5vmin);
+
+	position: absolute;
+
+}
