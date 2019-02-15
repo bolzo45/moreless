@@ -1,4 +1,4 @@
-$(".ecran2").append("<div class='plus' id='plus1'>+</div>");
+$(".ecran1").append("<div class='plus' id='plus1'>+</div>");
 //code animation trouver ici: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_animate_3
 function animation() {
   var elem = document.getElementById("plus1");
