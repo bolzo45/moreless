@@ -60,10 +60,14 @@ background:;
 
                 <div id="debug"></div>
 
+				<div class="personnage"><img src="personnages/DOG.1.png"></div>
+
             </div>
         </div>
 
 		<script src="jquery.js"></script>
+		<script src="index.js"></script>
+        <script src="fleches.js"></script>
 
 		<script>
         // variables
@@ -86,8 +90,8 @@ function doStuffwTimeout(){
       $('#plus').css('top', cntSt);
 
       // info de debug
-      currentPos = $('#plus').offset();
-      $("#debug").html("left: " + currentPos.left + "<br>top: " + currentPos.top);
+      // currentPos = $('#plus').offset();
+      // $("#debug").html("left: " + currentPos.left + "<br>top: " + currentPos.top);
 
       // et on répète!
       doStuffwTimeout();
