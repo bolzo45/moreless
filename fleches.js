@@ -10,10 +10,19 @@ $('body').on('keydown',function ( event ) {
     if ( toucheClavier == 39 ) {
 
         console.log("flèche droite");
+        // superFlash();
+
+        // Déplacement du personnage
+        $(".personnage").animate({
+            left: "+=11.1111%"
+        });
 
     } else if ( toucheClavier == 37 ) {
 
         console.log("flèche gauche");
+        $(".personnage").animate({
+            left: "-=11.1111%"
+        });
     }
 
     else {
@@ -21,3 +30,14 @@ $('body').on('keydown',function ( event ) {
     }
 
 });
+
+
+// Une fonction qui change la couleur de fond
+function superFlash() {
+
+   $( ".ecran" ).css({
+     "background-color": "red"
+   });
+
+}
+
