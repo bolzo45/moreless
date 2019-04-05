@@ -29,12 +29,15 @@ body {background-color:white;}
     overflow:hidden;
 }
 
-#box{
-  background:gray;
-  width:50px; height:50px;
-  position: absolute;
-  top:50px; left:0px;
-  border-radius:10px;
+#plus{
+top:0px;
+left:0px;
+position:absolute;
+z-index:200;
+font-size: 5em;
+width:10px;
+height:10px;
+background:;
 }
 
 #debug {
@@ -52,8 +55,8 @@ body {background-color:white;}
     <body>
 		<div id="site">
             <div id="snowZone">
-        
-                <div id="box"></div>
+
+                <div id="plus">+</div>
 
                 <div id="debug"></div>
 
@@ -74,16 +77,16 @@ body {background-color:white;}
 function doStuffwTimeout(){
   setTimeout(function(){
     // Position de départ (axe horizontal)
-    
-    $('#box').css({'left':snowX+'px'});
+
+    $('#plus').css({'left':snowX+'px'});
 
     if(cntSt < limite){
     // on ajoute un pixel
       cntSt = cntSt + pixels;
-      $('#box').css('top', cntSt);
+      $('#plus').css('top', cntSt);
 
       // info de debug
-      currentPos = $('#box').offset();
+      currentPos = $('#plus').offset();
       $("#debug").html("left: " + currentPos.left + "<br>top: " + currentPos.top);
 
       // et on répète!
@@ -95,7 +98,7 @@ function doStuffwTimeout(){
         // collision avec le personnage?
         cntSt = 0;
         snowX = Math.floor(Math.random() * $('#site').width());
-        
+
         // on accélère...
         pixels = pixels + 0.2;
 
