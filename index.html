@@ -72,7 +72,7 @@ background:;
 
       limite = $(window).height();
 
-      pixels = 5.0;
+      pixels = 8.0;
 
 function doStuffwTimeout(){
   setTimeout(function(){
@@ -100,7 +100,10 @@ function doStuffwTimeout(){
         snowX = Math.floor(Math.random() * $('#site').width());
 
         // on accélère...
-        pixels = pixels + 0.2;
+		if (pixels<10){
+			pixels = pixels + 0.2;
+		}
+
 
         // et on recommence!
         doStuffwTimeout();
