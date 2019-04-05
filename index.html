@@ -10,18 +10,106 @@
         p {
             font-family: "Comic Sans", "Courier", sans-serif;
         }
+		.snowflakes {
+    top:0px;
+    left:0px;
+    position:absolute;
+    z-index:200;
+    font-size: 3em;
+    width:10px;
+    height:10px;
+    background:;
+}
+body {background-color:white;}
+#site {
+    width:100vw;
+    height:100vh;
+    margin:0 auto;
+    position:relative;
+    overflow:hidden;
+}
+
+#box{
+  background:gray;
+  width:50px; height:50px;
+  position: absolute;
+  top:50px; left:0px;
+  border-radius:10px;
+}
+
+#debug {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    min-width: 150px;
+    min-height: 50px;
+    border : 1px solid black;
+
+}
+
         </style>
     </head>
-    <body onload="animation();">
-        <section class="ecran ecran1">
-			<div class="plancher"></div>
-		</section>
-		<section class="ecran ecran2"></section>
-		<section class="ecran ecran3"></section>
+    <body>
+		<div id="site">
+            <div id="snowZone">
+        
+                <div id="box"></div>
+
+                <div id="debug"></div>
+
+            </div>
+        </div>
 
 		<script src="jquery.js"></script>
 
-		<script src="index.js"></script>
+		<script>
+        // variables
+      var cntSt = 0, cntSi = 0;
+      snowX = Math.floor(Math.random() * $('#site').width());
 
+      limite = $(window).height();
+
+      pixels = 5.0;
+
+function doStuffwTimeout(){
+  setTimeout(function(){
+    // Position de départ (axe horizontal)
+    
+    $('#box').css({'left':snowX+'px'});
+
+    if(cntSt < limite){
+    // on ajoute un pixel
+      cntSt = cntSt + pixels;
+      $('#box').css('top', cntSt);
+
+      // info de debug
+      currentPos = $('#box').offset();
+      $("#debug").html("left: " + currentPos.left + "<br>top: " + currentPos.top);
+
+      // et on répète!
+      doStuffwTimeout();
+
+    } else {
+
+        // fin!
+        // collision avec le personnage?
+        cntSt = 0;
+        snowX = Math.floor(Math.random() * $('#site').width());
+        
+        // on accélère...
+        pixels = pixels + 0.2;
+
+        // et on recommence!
+        doStuffwTimeout();
+    }
+  },16); // vitesse: 16 millisecondes, càd 1/60.
+}
+
+// Lancement au chargement
+$(window).on('load',function() {
+    doStuffwTimeout();
+});
+
+        </script>
     </body>
 </html>
