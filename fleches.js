@@ -28,12 +28,17 @@ $('body').on('keydown',function ( event ) {
 	// flèche droite: 39
     if ( toucheClavier == 37 ) {
 
+<<<<<<< HEAD
+		if ( persoPosition.left < largeurEcran - ( largeurEcran / 11.1111 )) {
+	        $(".personnage_copie").animate(
+=======
 		// largeurEcran - ( largeurEcran / 11.1111 )
 
 		morelessDebug();
 
 		if ( persoPosition.left > 10 ) {
 	        $(".personnage").animate(
+>>>>>>> f30f83582b2388aa3a160914d60f61c231b969c4
 				{left: "-=11.1111%"},
 				100
 			);
