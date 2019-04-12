@@ -51,7 +51,7 @@ $('body').on('keydown',function ( event ) {
 		if ( persoPosition.left < stopDroite) {
 	        $(".personnage").animate(
 				{left: "+=11.1111%"},
-				100 
+				100
 			);
 
 			morelessDebug();
