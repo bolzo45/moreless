@@ -48,20 +48,4 @@ body {
 	margin: auto;
 
 
-
 }
-.personnage_copie {
-	width: 11.1111111%;
-	height: 20%;
-	border: 1px solid green;
-	position: absolute;
-	bottom: 0;
-	left: 44.4444444%;
-}
-.personnage_copie img{
-	border: 1px solid green;
-	object-fit: contain;
-	display: block;
-	max-height: 100%;
-	max-width: 100%;
-	margin: auto;
