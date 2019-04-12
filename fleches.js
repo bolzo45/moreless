@@ -3,25 +3,16 @@
 // Utiliser l'événement "keydown", car "keypress" ne tient pas compte des flèches
 // selon https://stackoverflow.com/questions/19347269/
 
-largeurEcran = document.documentElement.clientWidth;
-stopDroite = largeurEcran - ( largeurEcran / 5 );
-
-
-function morelessDebug() {
-
-	// Détecter position du personnage:
-	persoPosition = $('.personnage').offset();
-	$("#debug").html("left: " + persoPosition.left + "<br>ecran: "+largeurEcran+"px" + "<br>limite: "+ stopDroite);
-
-}
-
 $('body').on('keydown',function ( event ) {
 
     var toucheClavier = event.which;
 	//détécter la largeur du navigateur
+	var largeurEcran = document.documentElement.clientWidth;
+	var stopDroite = largeurEcran - ( largeurEcran / 11.1111 );
 
-
-	morelessDebug();
+	// Détecter position du personnage:
+	persoPosition = $('.personnage').offset();
+	$("#debug").html("left: " + persoPosition.left + "<br>ecran: "+largeurEcran+"px" + "<br>limite: "+ stopDroite);
 
 	// Note:
 	// flèche gauche 37
@@ -38,23 +29,26 @@ $('body').on('keydown',function ( event ) {
 				100
 			);
 
-			morelessDebug();
-
 		}
+		//
+        // console.log("flèche droite");
+        // // superFlash();
+		//
+        // Déplacement du personnage
+        // $(".personnage").animate(
+		// 	{left: "+=11.1111%"},
+		// 	100
+		// );
 
     }
 
 	else if ( toucheClavier == 39 ) {
-
-		morelessDebug();
 
 		if ( persoPosition.left < stopDroite) {
 	        $(".personnage").animate(
 				{left: "+=11.1111%"},
 				100
 			);
-
-			morelessDebug();
 
 		}
 
