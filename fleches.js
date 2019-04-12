@@ -20,7 +20,7 @@ $('body').on('keydown',function ( event ) {
     if ( toucheClavier == 37 ) {
 
 		if ( persoPosition.left < largeurEcran - ( largeurEcran / 11.1111 )) {
-	        $(".personnage").animate(
+	        $(".personnage_copie").animate(
 				{left: "-=11.1111%"},
 				100
 			);
