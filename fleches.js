@@ -58,11 +58,7 @@ $('body').on('keydown',function ( event ) {
 
     }
 
-    }
-
-    else {
-        console.log("raté");
-    }
+  }
 
 });
 
