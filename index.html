@@ -48,7 +48,7 @@
           #debug {
             position: absolute;
             right: 0px;
-            bottom: 0px;
+            top: 0px;
             min-width: 150px;
             min-height: 50px;
             border : 1px solid black;
@@ -71,7 +71,7 @@
 
         <div id="debug"></div>
 
-				<div class="personnage"><img src="personnages/DOG.1.png"></div>
+				<div class="personnage" id="personnage"><img src="personnages/DOG.1.png"></div>
 
       </section>
     </div>
@@ -89,7 +89,13 @@
 
       pixels = 8.0;
 
+      // Start the game
+
       function doStuffwTimeout(){
+
+        // Le principe de cette boucle: 
+        // la fonction setTimeout()
+
         setTimeout(function(){
           // Position de départ (axe horizontal)
 
@@ -100,31 +106,56 @@
             cntSt = cntSt + pixels;
             $('#plus').css('top', cntSt);
 
-            // info de debug
-            // currentPos = $('#plus').offset();
-            // $("#debug").html("left: " + currentPos.left + "<br>top: " + currentPos.top);
-
             // et on répète!
             doStuffwTimeout();
 
           } else {
 
+            console.log("bottom");
+
             // fin!
             // collision avec le personnage?
-            cntSt = 0;
-            snowX = Math.floor(Math.random() * $('#site').width());
 
-            // on accélère...
-        		if (pixels<10){
-        			pixels = pixels + 0.2;
-        		}
+            // est-ce que la position du "plus" est entre "(position du personnage + largeur du personnage)" ?
 
-            // et on recommence!
-            doStuffwTimeout();
+            plusPosition = $('#plus').offset();
+            persoPosition = $('#personnage').offset();
+            persoLargeur = $('#personnage').outerWidth();
+
+            if ( (plusPosition.left > persoPosition.left ) && plusPosition.left < ( persoPosition.left + persoLargeur) ) {
+                crash();
+            } else {
+                restart();
+            }
+            
           }
         },16); // vitesse: 16 millisecondes, càd 1/60.
       } // doStuffwTimeout()
 
+      function crash() {
+
+        console.log("crash!");
+        // couleur
+        $("#site").css("background", "tomato");
+
+      }
+
+      function restart() {
+
+        $("#site").css("background", "white");
+
+        cntSt = 0;
+        snowX = Math.floor(Math.random() * $('#site').width());
+
+        // on accélère... jusqu'à un maximum
+        if (pixels<10){
+          pixels = pixels + 0.2;
+        }
+
+        // et on recommence!
+        doStuffwTimeout();
+
+      }
 
         </script>
     </body>
