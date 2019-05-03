@@ -22,7 +22,7 @@
             height:10px;
             background:;
           }
-          
+
           #site {
             width:100vw;
             height:100vh;
@@ -93,7 +93,7 @@
 
       function doStuffwTimeout(){
 
-        // Le principe de cette boucle: 
+        // Le principe de cette boucle:
         // la fonction setTimeout()
 
         setTimeout(function(){
@@ -127,7 +127,7 @@
             } else {
                 restart();
             }
-            
+
           }
         },16); // vitesse: 16 millisecondes, càd 1/60.
       } // doStuffwTimeout()
@@ -137,6 +137,10 @@
         console.log("crash!");
         // couleur
         $("#site").css("background", "tomato");
+		// à faire:
+		/// faire monter le sol et modifier le paramètre limite, qui devra diminuer chaque fois que le sol monte
+		// puis redémarrer la boucle avec restart()
+		// 
 
       }
 

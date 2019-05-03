@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)file:///Users/lucakeller/Desktop/GR471/MULTIMEDIA/moreless/index.html -->
+<html class="no-js" lang=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>Titre</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="file:///Users/lucakeller/Desktop/GR471/MULTIMEDIA/moreless/style.css">
+        <style>
+        p {
+            font-family: "Comic Sans", "Courier", sans-serif;
+        }
+		.snowflakes {
+    top:0px;
+    left:0px;
+    position:absolute;
+    z-index:200;
+    font-size: 3em;
+    width:10px;
+    height:10px;
+    background:;
+}
+body {background-color:white;}
+#site {
+    width:100vw;
+    height:100vh;
+    margin:0 auto;
+    position:relative;
+    overflow:hidden;
+}
+
+#plus{
+top:0px;
+left:0px;
+position:absolute;
+z-index:200;
+font-size: 5em;
+width:10px;
+height:10px;
+background:;
+}
+
+#debug {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    min-width: 150px;
+    min-height: 50px;
+    border : 1px solid black;
+
+}
+
+        </style>
+    </head>
+    <body>
+		<div id="site">
+            <div id="snowZone">
+
+                <div id="plus" style="left: 1256px; top: 627.8px;">+</div>
+
+                <div id="debug"></div>
+
+				<div class="personnage"><img src="file:///Users/lucakeller/Desktop/GR471/MULTIMEDIA/moreless/personnages/DOG.1.png"></div>
+				<div class="personnage_copie"><img src="file:///Users/lucakeller/Desktop/GR471/MULTIMEDIA/moreless/personnages/DOG.1%20-%20copie.png"></div>
+
+
+            </div>
+        </div>
+
+		<script src="file:///Users/lucakeller/Desktop/GR471/MULTIMEDIA/moreless/jquery.js"></script>
+        <script src="file:///Users/lucakeller/Desktop/GR471/MULTIMEDIA/moreless/fleches.js"></script>
+
+		<script>
+        // variables
+      var cntSt = 0, cntSi = 0;
+      snowX = Math.floor(Math.random() * $('#site').width());
+
+      limite = $(window).height();
+
+      pixels = 8.0;
+
+function doStuffwTimeout(){
+  setTimeout(function(){
+    // Position de départ (axe horizontal)
+
+    $('#plus').css({'left':snowX+'px'});
+
+    if(cntSt < limite){
+    // on ajoute un pixel
+      cntSt = cntSt + pixels;
+      $('#plus').css('top', cntSt);
+
+      // info de debug
+      // currentPos = $('#plus').offset();
+      // $("#debug").html("left: " + currentPos.left + "<br>top: " + currentPos.top);
+
+      // et on répète!
+      doStuffwTimeout();
+
+    } else {
+
+        // fin!
+        // collision avec le personnage?
+        cntSt = 0;
+        snowX = Math.floor(Math.random() * $('#site').width());
+
+        // on accélère...
+		if (pixels<10){
+			pixels = pixels + 0.2;
+		}
+
+
+        // et on recommence!
+        doStuffwTimeout();
+    }
+  },16); // vitesse: 16 millisecondes, càd 1/60.
+}
+
+// Lancement au chargement
+$(window).on('load',function() {
+    doStuffwTimeout();
+});
+
+        </script>
+    
+
+</body></html>
