@@ -34,7 +34,7 @@ body {
 }
 .personnage {
 	width: 11.1111111%;
-	height: 20%;
+	height: 20vh;
 	border: 1px solid green;
 	position: absolute;
 	bottom: 0;
