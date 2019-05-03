@@ -16,6 +16,7 @@ body {
   border: 1px solid red;
   flex: 1 0;
   height: 100vh;
+  Bottom: 0;
   position: relative;
 }
 .ecran2 {
