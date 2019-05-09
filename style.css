@@ -7,10 +7,12 @@ html {
     background-color: #eee;
 }
 body {
+  background-color:white;
+  font-family: "Sporting Grotesque_Regular", "Comic Sans", "Courier", sans-serif;
   display: flex; /* or inline-flex */
   margin: 0;
-
 }
+
 .ecran {
   background-color: #fff;
   border: 1px solid red;
@@ -28,25 +30,63 @@ body {
 	font-size: 15vmin;
 	top: 0vh;
 	left: calc(50% - 5vmin);
-
 	position: absolute;
-
 }
 .personnage {
 	width: 11.1111111%;
 	height: 20vh;
-	border: 1px solid green;
 	position: absolute;
 	bottom: 0;
 	left: 44.4444444%;
 }
 .personnage img{
-	border: 1px solid green;
 	object-fit: contain;
 	display: block;
 	max-height: 100%;
 	max-width: 100%;
 	margin: auto;
+}
 
 
+.snowflakes {
+  top:0px;
+  left:0px;
+  position:absolute;
+  z-index:200;
+  font-size: 3em;
+  width:10px;
+  height:10px;
+  background:;
+}
+
+#site {
+  width:100vw;
+  height:100vh;
+  margin:0 auto;
+  position:relative;
+  overflow:hidden;
+}
+
+#snowZone {
+  display: none;
+}
+
+#plus{
+  top:0px;
+  left:0px;
+  position:absolute;
+  z-index:200;
+  font-size: 5em;
+  width:10px;
+  height:10px;
+  display: none;
+}
+
+#debug {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  min-width: 150px;
+  min-height: 50px;
+  border : 1px solid black;
 }
