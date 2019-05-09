@@ -7,6 +7,9 @@ $('body').on('keydown',function ( event ) {
 
     startGame();
 
+    // on change l'image du personnage
+    changePerso();
+
   }
 
 });
@@ -25,7 +28,5 @@ function startGame() {
 
   });
 
-  
-  
 
 }
