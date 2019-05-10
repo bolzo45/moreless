@@ -26,7 +26,9 @@ function startGame() {
       restart();
     } );
 
+
+
   });
 
-
+ff
 }
