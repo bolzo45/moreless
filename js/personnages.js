@@ -6,12 +6,13 @@
 // voir https://cours-web.ch/js/arrays/
 
 var persos = [
-  "DOG.1.png", 
-  "POTATO.1.png", 
-  "DOG.2.png", 
+  "DOG.1.png",
+  "POTATO.1.png",
+  "DOG.2.png",
   "SOCK.1.png",
   "DOG.3.png",
   "SOCK.2.png",
+  "PIXEL.1.png",
 ];
 
 var numPerso = 0;
