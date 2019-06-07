@@ -4,7 +4,7 @@
 
 html {
     color: #222;
-    background-color: #eee;
+    background-color: black;
 }
 body {
   background-color:white;
@@ -95,6 +95,7 @@ body {
 	display: none;
 	height: 100vh;
 	text-align: center;
+	color: white;
 
 
 }
