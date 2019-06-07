@@ -11,7 +11,7 @@ function morelessDebug() {
 
   // Détecter position du personnage:
   persoPosition = $('.personnage').offset();
-  $("#debug").html("left: " + persoPosition.left + "<br>ecran: "+largeurEcran+"px" + "<br>limite: "+ stopDroite);
+  $("#debug").html("left: " + persoPosition.left + "<br>ecran: "+largeurEcran+"px" + "<br>limite: "+ stopDroite + "<br>hauteur: "+hauteur);
 
 }
 

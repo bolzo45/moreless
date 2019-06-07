@@ -15,6 +15,7 @@
         <p>Moreless+</p>
         <p>press enter</p>
         <p>to play</p>
+
       </section>
 
       <section id="snowZone">
@@ -26,12 +27,20 @@
 				<div class="personnage" id="personnage"><img src="personnages/DOG.1.png"></div>
 
       </section>
+
+
     </div>
+
+	<section id="gameover">
+	  <p>Game Over</p>
+
+	</section>
 
 	<script src="js/jquery.js"></script>
     <script src="js/intro.js"></script>
     <script src="js/fleches.js"></script>
     <script src="js/personnages.js"></script>
+	<script src="js/gameover.js"></script>
 
 		<script>
         // variables
@@ -99,9 +108,9 @@
 		// puis redémarrer la boucle avec restart()
 		hauteur = hauteur-20;
 
-		if (hauteur == 0) {
+		if (hauteur < 1) {
 
-			// déclencher le GAME OVER...
+	 		gameover();
 
 		}
 

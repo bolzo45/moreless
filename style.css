@@ -90,3 +90,11 @@ body {
   min-height: 50px;
   border : 1px solid black;
 }
+
+#gameover {
+	display: none;
+	height: 100vh;
+	text-align: center;
+
+
+}
