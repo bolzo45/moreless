@@ -4,15 +4,26 @@
 
 html {
     color: #222;
-    background-color: black;
+    background-color: #eee;
 }
 body {
   background-color:white;
   font-family: "Sporting Grotesque_Regular", "Comic Sans", "Courier", sans-serif;
   display: flex; /* or inline-flex */
   margin: 0;
+
+
 }
 
+#intro1 {
+	font-size: 180px;
+}
+
+#intro1 p {
+	margin: -105px;
+	margin-left: 20px;
+	margin-top: 13px;
+}
 .ecran {
   background-color: #fff;
   border: 1px solid red;
@@ -95,7 +106,6 @@ body {
 	display: none;
 	height: 100vh;
 	text-align: center;
-	color: white;
 
 
 }
